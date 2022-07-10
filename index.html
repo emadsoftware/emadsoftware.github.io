@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html id="page_bg" lang="en" style="height: 100%;">
+<head>
+    <link rel="shortcut icon" href="/media/images/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Refresh" content="1500">
+    <title>Emad Software</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="media/css/main.css?v=1.4" />
+    <style>
+        .upper{
+            display: flex;
+            align-items: center;
+        }
+        .row {
+            justify-content: center;
+            height: inherit;
+            align-items: center;
+            align-content: center;
+        }
+        .upper img {width: 10%; padding: 1rem;}
+        .lower {padding: 3rem; padding-top: 1rem;display: flex;justify-content: center;}
+        .lower span {font-family: sans-serif; font-size: 5rem;}
+        .one img {padding: 2rem;}
+        .two img {padding: 1rem;}
+        .two {display: flex;justify-content: center;}
+        .card {border-radius: 2rem; border: none; box-shadow:0 0 30px rgb(156 202 250 / 27%); background: linear-gradient(17deg, #f0f7ff, #ffffff3b) !important;}
+        .logo {position: absolute; top: 2rem; left: 2rem; width: 20rem;}
+        .title {text-align: center;}
+        body {color: rgb(44 63 105 / 70%);}
+        html {
+            animation: fadeInAnimation ease 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;}
+        .hidden {opacity: 0 !important;}
+        .visible {opacity: 1;transition: opacity 3s ease-out;}
+        @keyframes fadeInAnimation {0% {opacity: 0;}100% {opacity: 1;}}
+    </style>
+     <!-- <script>
+        var root = document.getElementsByTagName( 'html' )[0]; // '0' to assign the first (and only `HTML` tag)
+        root.setAttribute( 'class', 'hidden' );
+    </script> -->
+</head>
+<body style="background-size: cover; height: 100%;">
+    <div class="container-fluid" style="background: linear-gradient(180deg, #ecececb5, #ececec96);
+        height: inherit;">
+        <div class="row">
+            <div class="col-md-8 col-lg-8">
+                <h1 class="title">Emad Software</h1>
+                <div class="card" style="padding: 2rem;">
+                <div class="upper one">
+                    <img id="pic-1" src="https://appon.radiantthemes.com/wp-content/uploads/2019/01/testmonial-02.png">
+                    <h3 id="recognizer">A personal page of Emad Ahmed, a software developer based in Maryland.</h3>
+                </div>
+                <!-- <div class="upper two">
+                    <img id="pic-2" src="/media/images/sample_pic_2.png">
+                    <h2 id="recognizee">Firstname Lastname</h2>
+                </div>
+                <div class="lower">
+                    <h1><span>&ldquo;</span>
+                        <div style="display:contents;" id="message">Thank you for setting up the Thank You Board</div>
+                        <span>&rdquo;</span>
+                    </h1></div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <img class="logo" src="media/images/logo_full.svg">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+    <script>
+        // var root = document.getElementsByTagName( 'html' )[0]; // '0' to assign the first (and only `HTML` tag)
+        // root.setAttribute( 'class', 'visible' );
+
+        var totalCount = 6;
+        var num = Math.ceil( Math.random() * totalCount );
+        console.log(num);
+        num = 6;
+
+        if (num >= 1 && num <= 5){
+            console.log('png');
+            document.body.background = 'media/images/pastel_background_'+num+'.png';
+            document.body.style.backgroundSize = "cover";
+        } else {
+            console.log('dynamic');
+            VANTA.WAVES({
+                el: "#page_bg",
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.00,
+                minWidth: 200.00,
+                scale: 1.00,
+                scaleMobile: 1.00,
+                color: 0xb9dcff,
+                zoom: 0.70
+                })
+        }
+
+        if (num == 1 || num == 2 ){
+            document.getElementById('recognizer').innerHTML = 'Matthew Zamora' + ' has recognized';
+            document.getElementById('recognizee').innerHTML = 'Emad Ahmed';
+            document.getElementById('message').innerHTML = 'Thank you for setting up the Thank You Board';
+        } else if (num == 3 || num == 4 ) {
+            document.getElementById('recognizer').innerHTML = 'Matthew Zamora' + ' has recognized';
+            document.getElementById('recognizee').innerHTML = 'Jose Salazar';
+            document.getElementById('message').innerHTML = 'Thank you for working on Human Protein Atlas.';
+        } else {
+            document.getElementById('recognizer').innerHTML = 'Matthew Zamora' + ' has recognized';
+            document.getElementById('recognizee').innerHTML = 'Chad Tasker';
+            document.getElementById('message').innerHTML = 'Thank you for supporting all of IT.';
+        }
+
+        var totalCount = 2;
+        var num1 = Math.ceil( Math.random() * totalCount );
+        var num2 = Math.ceil( Math.random() * totalCount );
+        while (num2 == num1){
+            var num2 = Math.ceil( Math.random() * totalCount );
+        }
+        document.getElementById("pic-1").src="/media/images/sample_pic_"+num1+".png";
+        document.getElementById("pic-2").src="/media/images/sample_pic_"+num2+".png";
+        
+    </script>
+</body>
+</html>
